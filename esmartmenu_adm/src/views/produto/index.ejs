@@ -1,0 +1,70 @@
+<section class="content-header">
+	<h1>
+		Produto
+		<small>Lista</small>
+	</h1>
+
+	<ol class="breadcrumb">
+		<li><a href="/"><i class="fa fa-dashboard"></i></a></li>
+		<li class="active">Lista de Produto</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3>Listagem</h3>
+					<div class="row">
+						<div class="col-xs-12">
+							<a href="/produto/new" class="btn btn-success">Novo</a>
+						</div>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Categoria</th>
+									<th>Preço Venda</th>
+									<th>Habilitar</th>
+									<th>Ações</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for (var i = 0; i < produtos.length; i++) { %>
+									<tr>
+										<td><%= produtos[i].nome %></td>
+										<td><%= produtos[i].categoria.nome %></td>
+										<td><%= produtos[i].preco_venda %></td>
+										<td>
+											<% if (produtos[i].enable) { %>
+												<span class="label label-success">Habilitar</span>
+											<% } else { %>
+												<span class="label label-warning">Desabilitar</span>
+											<% } %>
+										</td>
+										<td>
+											<a href="/produto/<%= produtos[i]._id %>" class="btn btn-default btn-small">
+												<i class="fa fa-eye"></i>
+											</a>
+
+											<form action="/produto/<%= produtos[i]._id %>?_method=DELETE" method="POST" class="inline">
+												<button type="submit" class="btn btn-danger btn-small">
+													<i class="fa fa-trash"></i>
+												</button>
+											</form>
+										</td>
+									</tr>
+								<% } %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

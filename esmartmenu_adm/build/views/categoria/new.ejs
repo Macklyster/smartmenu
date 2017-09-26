@@ -1,0 +1,27 @@
+<section class="content-header">
+	<h1>
+		Categoria
+		<small>Criar</small>
+	</h1>
+
+	<ol class="breadcrumb">
+		<li><a href="/"><i class="fa fa-dashboard"></i></a></li>
+		<li class="active">Criar Categoria</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary">
+				<div class="col-xs-12">
+					<h4 class="box-title">Criar nova categoria</h4>
+				</div>
+
+				<form action="/categoria" method="POST" role="form">
+					<% include ./../partials/categoria/form %>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

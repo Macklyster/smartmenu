@@ -1,0 +1,26 @@
+Teste
+
+<div class="chart">
+    <!-- Sales Chart Canvas -->
+    <canvas id="produto15dias" style="height: 180px;"></canvas>
+</div>
+
+
+<script>
+    var conteudo = document.getElementById('produto15dias').getContext('2d')
+
+    $.get('http://localhost:9001/de15dias').done(function (result) {
+        var chart = new Chart(conteudo, {
+            type: 'line',
+            data: {
+                datasets: result.datasets,
+                labels: result.labels
+            },
+            options: {
+
+            }
+        })
+        alert('teste');
+    })
+
+</script>

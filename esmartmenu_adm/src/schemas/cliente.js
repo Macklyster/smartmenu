@@ -10,21 +10,17 @@ const Cliente = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	email: {
-		type: String,
-		required: true
-	},
 	senha: {
 		type: String
 	},
-	aniversario: {
+	data_nasc: {
 		dia: {
 			type: Number,
 			required: true,
 			default: ''
 		},
 		mes: {
-			type: String,
+			type: Number,
 			required: true,
 			default: ''
 		},
@@ -38,9 +34,15 @@ const Cliente = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	celular: {
-		type: String,
-		default: ''
+	//contato:{
+		email: {
+			type: String,
+			required: true
+		},
+		celular: {
+			type: String,
+			default: ''
+	//	}
 	},
 	endereco: {
 		rua: {
@@ -55,8 +57,12 @@ const Cliente = new mongoose.Schema({
 			type: String,
 			required: true
 		},
-		vizinhanca: {
+		bairro: {
 			type: String,
+			required: true
+		},
+		cep: {
+			type: Number,
 			required: true
 		}
 	}

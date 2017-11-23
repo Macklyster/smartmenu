@@ -27,7 +27,7 @@ module.exports = (req, res) => {
 				req.body.image = req.files && req.files[0] && req.files[0].location
 			}
 
-			Product
+			Produto
 				.findByIdAndUpdate(req.params.id, req.body)
 				.then((produto) => {
 					return res.redirect('/produto')

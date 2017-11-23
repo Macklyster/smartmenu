@@ -9,6 +9,7 @@ const Cliente = require('./../../schemas/cliente')
 const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const expressSession = require('express-session')
+const moment = require('moment')
 
 module.exports = (app) => {
 	app.set('port', 9001)
@@ -37,5 +38,5 @@ module.exports = (app) => {
 	passport.serializeUser(Cliente.serializeUser())
 	passport.deserializeUser(Cliente.deserializeUser())
 
-	mongoose.connect('mongodb://localhost:27017/e_smartmenu')
+	mongoose.connect('mongodb://localhost:27017/e_smartmenu', { useMongoClient: true })
 }

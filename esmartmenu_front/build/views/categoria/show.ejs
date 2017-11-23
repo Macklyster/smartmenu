@@ -1,61 +1,24 @@
 <%- contentFor('body') %>
-<section id="produto">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12 list_pro">
-				<h4 class="title upper bold">Produtos</h4>
-				<hr />
-				<div class="row">
+	<section id="produto">
+		<div class="container">
+			<div class="row">
+				<% for (var i = 0; i < produtos.length; i++) {%>
 					<div class="col-xs-12 col-md-4 product_item">
-						<div class="preview">
-							<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" class="img-responsive"  alt="">
+						<div class="preview text-center">
+							<img src="<%= produtos[i].image %>" class="img-responsive" alt="">
 						</div>
-						<div class="info">
-							<a href="#">Item 1</a>
+						<div class="info text-center">
+							<a href="/produto/<%= produtos[i].slug %>">
+								<%= produtos[i].nome %>
+							</a>
 							<div class="price">
-								<strong>R$10,00</strong>
-								<a href="#" class="btn btn-red-default">See more</a>
+								<strong>R$
+									<%= produtos[i].preco_venda %>,00</strong>
 							</div>
+							<a href="/produto/<%= produtos[i].slug %>" class="btn btn-red-default">Mais Detalhes</a>
 						</div>
 					</div>
-					<div class="col-xs-12 col-md-4 product_item">
-						<div class="preview">
-							<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" alt="">
-						</div>
-						<div class="info">
-							<a href="#">Item 1</a>
-							<div class="price">
-								<strong>R$10,00</strong>
-								<a href="#" class="btn btn-red-default">See more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-md-4 product_item">
-						<div class="preview">
-							<img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" alt="">
-						</div>
-						<div class="info">
-							<a href="#">Item 1</a>
-							<div class="price">
-								<strong>R$10,00</strong>
-								<a href="#" class="btn btn-red-default">See more</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-md-4 product_item">
-						<div class="preview">
-							<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" class="img-responsive"  alt="">
-						</div>
-						<div class="info">
-							<a href="#">Item 1</a>
-							<div class="price">
-								<strong>R$10,00</strong>
-								<a href="#" class="btn btn-red-default">See more</a>
-							</div>
-						</div>
-					</div>
-				</div>
+					<% } %>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>

@@ -13,11 +13,23 @@
 <aside class="main-sidebar">
 	<section class="sidebar">
 		<ul class="sidebar-menu">
-			<li  class="header">MENU</li>
+			<li class="header">MENU</li>
 			<li>
-				<a href="">
+				<a href="/">
 					<i class="fa fa-dashboard"></i>
 					<span>Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="/banner">
+					<i class="fa fa-file-image-o"></i>
+					<span>Banners Lojas</span>
+				</a>
+			</li>
+			<li>
+				<a href="/cliente">
+					<i class="fa fa-address-card-o"></i>
+					<span>Clientes</span>
 				</a>
 			</li>
 			<li>
@@ -38,12 +50,35 @@
 					<span>Usuários</span>
 				</a>
 			</li>
-			<li>
-				<a href="/auth/logout">
-					<i class="fa fa-sign-out"></i>
-					<span>Sair</span>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-book"></i>
+					<span>Relatórios</span>
+					<span class="pull-right-container">
+						<i class="fa fa-angle-left pull-right"></i>
+					</span>
 				</a>
+				<ul class="treeview-menu">
+					<li>
+						<a href="/relvendaperiodo">
+							<i class="fa fa-circle-o"></i> Vendas por Período</a>
+					</li>
+					<li>
+						<a href="/relcliente">
+							<i class="fa fa-circle-o"></i> Clientes</a>
+					</li>
+					<li>
+						<a href="/relprodutosmaisvendido">
+							<i class="fa fa-circle-o"></i> Produtos mais Vendidos</a>
+					</li>
+				</ul>
 			</li>
+			<!--li>
+				<a href="#">
+					<i class="fa fa-area-chart"></i>
+					<span>Relatórios</span>
+				</a>
+			</li-->
 			<li>
 				<a href="/auth/logout">
 					<i class="fa fa-sign-out"></i>

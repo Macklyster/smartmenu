@@ -1,74 +1,75 @@
-<div class="row">	
+<div class="row">
+	<hr>
 	<div class="col-xs-12">
-		<h4>General</h4>
-		<hr>
+		<h4>Geral</h4>
 	</div>
 </div>
-<div class="form-group">
-	<label for="name">Name</label>
-	<input type="text" name="name" class="form-control" placeholder="Enter you full name" value="<%= customer.name %>">
-</div>
 
-<input type="hidden" name="_id" value="<%= customer.id %>">
+<input type="hidden" name="_id" value="<%= cliente.id %>">
+
+<div class="form-group">
+	<label for="name">Nome</label>
+	<input type="text" name="nome" class="form-control" placeholder="Digite seu nome completo" value="<%= cliente.nome %>">
+</div>
 
 <div class="form-group">
 	<label for="email">Email</label>
-	<input type="email" name="email" class="form-control" placeholder="Enter a valid email" value="<%= customer.email %>">
+	<input type="email" name="email" class="form-control" placeholder="Entre com um email válido" value="<%= cliente.contato.email %>">
 </div>
 
 <div class="form-group">
-	<label for="password">Password</label>
-	<input type="password" name="password" class="form-control" placeholder="Enter your secrete password" value="<%= customer.password %>">
+	<label for="senha">Senha</label>
+	<input type="password" name="senha" class="form-control" placeholder="Digite sua senha secreta" value="<%= cliente.senha %>">
 </div>
 
-<div class="row">	
+<div class="row">
+	<hr>
 	<div class="col-xs-12">
-		<h4>Personal</h4>
-		<hr>
+		<h4>Pessoal</h4>
 	</div>
 </div>
 <div class="form-group">
-	<label for="name">Birthday</label>
-	<input type="text" name="birthday" class="form-control" placeholder="XX/XX/XXXXX" value="<%= customer.birthday %>">
+	<label for="name">Data Nascimento</label>
+	<input type="text" name="data_nasc" class="form-control" placeholder="XX/XX/XXXXX" value="<%= cliente.data_nasc %>">
 </div>
 
 <div class="form-group">
 	<label for="name">ID (CPF)</label>
-	<input type="text" name="cpf" class="form-control" placeholder="XXX.XXX.XXX-XX" value="<%= customer.id %>">
+	<input type="text" name="cpf" class="form-control" placeholder="XXX.XXX.XXX-XX" value="<%= cliente.id %>">
 </div>
 
 <div class="form-group">
-	<label for="name">Celphone</label>
-	<input type="tel" name="celphone" class="form-control" placeholder="(XX) XXXXX-XXXX" value="<%= customer.celphone %>">
+	<label for="name">Celular</label>
+	<input type="tel" name="celular" class="form-control" placeholder="(XX) XXXXX-XXXX" value="<%= cliente.contato.celular %>">
 </div>
 
-<div class="row">	
+<div class="row">
+	<hr>
 	<div class="col-xs-12">
-		<h4>Delivery</h4>
-		<hr>
+		<h4>Entrega</h4>
 	</div>
 </div>
 
 <div class="form-group">
-	<label for="name">Street</label>
-	<input type="text" name="street" class="form-control" placeholder="Enter your street name" value="<%= customer.address.street %>">
+	<label for="name">Rua</label>
+	<input type="text" name="rua" class="form-control" placeholder="Digite o nome da sua rua" value="<%= cliente.endereco.rua %>">
 </div>
 
 <div class="form-group">
-	<label for="name">Neightborhood</label>
-	<input type="text" name="neightborhood" class="form-control" placeholder="Enter your neightborhood"  value="<%= customer.address.neightborhood %>">
+	<label for="name">Bairro</label>
+	<input type="text" name="bairro" class="form-control" placeholder="Entre em seu bairro"  value="<%= cliente.endereco.bairro %>">
 </div>
 
 <div class="form-group">
-	<label for="name">Number</label>
-	<input type="number" name="number_delivery" class="form-control" placeholder="Enter your number"  value="<%= customer.address.number %>">
+	<label for="name">Número</label>
+	<input type="number" name="numero_entrega" class="form-control" placeholder="Coloque seu número"  value="<%= cliente.endereco.numero %>">
 </div>
 
 <div class="form-group">
-	<label for="name">City</label>
-	<input type="text" name="city" class="form-control" placeholder="Enter your city name"  value="<%= customer.address.city %>">
+	<label for="name">Cidade</label>
+	<input type="text" name="cidade" class="form-control" placeholder="Digite o nome da sua cidade"  value="<%= cliente.endereco.cidade %>">
 </div>
 
 <div class="form-group">
-	<button type="submit" class="btn btn-red-dark-default">Save</button>
+	<button type="submit" class="btn btn-red-dark-default">Salvar</button>
 </div>

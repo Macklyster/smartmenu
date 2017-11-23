@@ -14,7 +14,7 @@
 				<div class="other-info">
 					<ul class="list-group">
 						<li class="list-group-item">
-							<label for="">Out of stock:</label>
+							<label for="">Fora de estoque:</label>
 							<% if (produto.enable) { %>
 								<span class="label label-success">Sim</span>
 							<% } else { %>
@@ -27,7 +27,7 @@
 					<form action="/carrinho" method="POST">
 						<input type="hidden" name="produto_id" value="<%= produto._id %>" >
 						<input type="hidden" name="produto_slug" value="<%= produto.slug %>" >
-						<button class="btn btn-block btn-red-default upper btn-add-cart">Adicionar ao Carrinho</button>
+						<button onclick="carrinho()" class="btn btn-block btn-red-default upper btn-add-cart">Adicionar ao Carrinho</button>
 					</form>
 				</div>
 			</div>

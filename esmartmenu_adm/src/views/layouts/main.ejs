@@ -1,27 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title><%= title %></title>
+	<title>
+		<%= title %>
+	</title>
+
+	<link rel="stylesheet" href="/css/buttons.dataTables.min.css">
+	<link rel="stylesheet" href="/css/jquery-ui.css">
 	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/css/application.css">	
+	<link rel="stylesheet" href="/css/application.css">
+	<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+
 </head>
+
 <body class="main-wrap hold-transition skin-green sidebar-mini">
-	
+
 	<% include ./../partials/main/header %>
 
-	<main class="content-wrapper">
-		<%- body %>
-	</main>	
-	
-	<% include ./../partials/main/footer %>
+		<main class="content-wrapper">
+			<%- body %>
+		</main>
 
-	<script src="/jquery/dist/jquery.min.js"></script>
-	<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="/js/theme.js"></script>	
-	<script src="/js/app.js"></script>	
+		<% include ./../partials/main/footer %>
+
+			<script src="/jquery/dist/jquery.min.js"></script>
+			<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+			<script src="/js/theme.js"></script>
+			<script src="/js/app.js"></script>
+			<script src="/js/jspdf.debug.js"></script>
+			<script src="/js/jquery.techbytarun.excelexportjs.min.js"></script>
+			<script src="/js/bootstrap-datepicker.min.js"></script>
+			<script src="/js/Chart.min.js"></script>
+			<script src="/js/jquery.dataTables.min.js"></script>
+			<script src="/js/dataTables.buttons.min.js"></script>
+			<script src="/js/jszip.min.js"></script>
+			<script src="/js/pdfmake.min.js"></script>
+			<script src="/js/vfs_fonts.js"></script>
+			<script src="/js/buttons.html5.min.js"></script>
+			<script src="/js/Portuguese-Brasil.json"></script>
+			<script src="/js/jquery-ui.js"></script>
 </body>
+
 </html>
+
+<script>
+
+	$('#relcliente').DataTable({
+		dom: 'Bfrtip',
+		language: {
+			paginate: {
+				"previous": "Anterior",
+				"next": "Próximo"
+			},
+			"lengthMenu": "Exibir _MENU_ registros por página",
+			"zeroRecords": "Nada encontrado - desculpe",
+			"info": "Mostrando página _PAGE_ de _PAGES_",
+			"infoEmpty": "Nenhum registro disponível",
+			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
+			"search": "Buscar por:"
+		},
+		buttons: [
+			'copyHtml5',
+			'excelHtml5',
+			'csvHtml5',
+			'pdfHtml5'
+		]
+	});
+
+	$('#relprodutosmaisvendidos').DataTable({
+		dom: 'Bfrtip',
+		language: {
+			paginate: {
+				"previous": "Anterior",
+				"next": "Próximo"
+			},
+			"lengthMenu": "Exibir _MENU_ registros por página",
+			"zeroRecords": "Nada encontrado - desculpe",
+			"info": "Mostrando página _PAGE_ de _PAGES_",
+			"infoEmpty": "Nenhum registro disponível",
+			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
+			"search": "Buscar por:"
+		},
+		buttons: [
+			'copyHtml5',
+			'excelHtml5',
+			'csvHtml5',
+			'pdfHtml5'
+		]
+	});
+
+	$('#relvendasnoperiodo').DataTable({
+		dom: 'Bfrtip',
+		language: {
+			paginate: {
+				"previous": "Anterior",
+				"next": "Próximo"
+			},
+			"lengthMenu": "Exibir _MENU_ registros por página",
+			"zeroRecords": "Nada encontrado - desculpe",
+			"info": "Mostrando página _PAGE_ de _PAGES_",
+			"infoEmpty": "Nenhum registro disponível",
+			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
+			"search": "Buscar por:"
+		},
+		buttons: [
+			'copyHtml5',
+			'excelHtml5',
+			'csvHtml5',
+			'pdfHtml5'
+		]
+	});
+
+	$("#datepickerini").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		format: 'dd/mm/yyyy',
+		startDate: '-3d'
+	});
+
+	$("#datepickerfim").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		format: 'dd/mm/yyyy',
+		startDate: '-3d'
+	});
+
+</script>

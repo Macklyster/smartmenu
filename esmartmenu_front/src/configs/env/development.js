@@ -37,5 +37,5 @@ module.exports = (app) => {
 	passport.serializeUser(Cliente.serializeUser())
 	passport.deserializeUser(Cliente.deserializeUser())
 
-	mongoose.connect('mongodb://localhost:27017/e_smartmenu')
+	mongoose.connect('mongodb://localhost:27017/e_smartmenu', { useMongoClient: true })
 }

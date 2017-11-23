@@ -1,0 +1,16 @@
+<%- contentFor('body') %>
+<section id="conta">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h4 class="title upper bold">Registrar</h4>
+				<span class="subtitle">Criar uma nova Conta</span>
+			</div>
+			<div class="col-xs-12">
+				<form action="/conta" method="POST">
+					<% include ./../partials/conta/form %>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 		.then((carrinho) => {
 			carrinho.produtos.pull({ _id: req.query.produto_id })
 			carrinho.save()
-
+			
 			if (!carrinho.produtos.length) {
 				return res.redirect('/')
 			}

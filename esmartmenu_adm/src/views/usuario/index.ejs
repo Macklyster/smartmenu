@@ -27,14 +27,22 @@
 						<table class="table table-hover">
 							<thead>
 								<tr>
+									<th>Nome</th>
+									<th>CPF</th>
 									<th>Email</th>
+									<th>Contato</th>
+									<th>Endereço</th>
 									<th>Ações</th>
 								</tr>
 							</thead>
 							<tbody>
 								<% for (var i = 0; i < usuarios.length; i++) { %>
 									<tr>
+										<td><%= usuarios[i].nome %></td>
+										<td><%= usuarios[i].id %></td>
 										<td><%= usuarios[i].email %></td>
+										<td><%= usuarios[i].celular %></td>
+										<td><%= usuarios[i].endereco.rua %> - <%= usuarios[i].endereco.numero %> - <%= usuarios[i].endereco.bairro %> - <%= usuarios[i].endereco.cidade %></td>
 										<td>
 											<a href="/usuario/<%= usuarios[i]._id %>" class="btn btn-default btn-small">
 												<i class="fa fa-eye"></i>

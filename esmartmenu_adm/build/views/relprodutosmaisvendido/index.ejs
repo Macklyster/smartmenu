@@ -1,0 +1,80 @@
+<section class="content-header">
+	<h1>
+		Produtos mais vendidos
+		<small>Relatório</small>
+	</h1>
+
+	<ol class="breadcrumb">
+		<li>
+			<a href="/">
+				<i class="fa fa-dashboard"></i>
+			</a>
+		</li>
+		<li class="active">Lista de Produtos mais vendidos</li>
+	</ol>
+</section>
+<div id="editor"></div>
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3>Filtrar</h3>
+					<div class="row">
+						<div class="col-xs-3">
+							<div class="input-group date">
+								<input id="datepickerini" name="datainicial" type="text" class="form-control" data-date-format="dd/mm/yyyy">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-3">
+								<div class="input-group date">								
+								<input id="datepickerfim" name="datafinal" type="text" class="form-control" data-date-format="dd/mm/yyyy">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-th"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<button id="btnGerarFiltro" class="btn btn-primary btn-block">Filtrar</button>
+						</div>
+					</div>
+				</div>
+				<div class="box-body">
+					<div class="table-responsive">
+						<table id="relprodutosmaisvendidos" class="table table-hover">
+							<thead>
+								<tr>
+									<th>Nome</th>
+									<th>Categoria</th>
+									<th>Quant. Vendas</th>
+									<th>Valor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% for (var i = 0; i < produtos.length; i++) { %>
+									<tr ng-repeat="produtos as prods | filter: filtroproduto">
+										<td>
+											<%= produtos[i].nome %>
+										</td>
+										<td>
+											<%= produtos[i].categoria.nome %>
+										</td>
+										<td>
+											<%= produtos[i].quantidade %>
+										</td>
+										<td>
+											<%= produtos[i].preco_venda %>
+										</td>
+									</tr>
+									<% } %>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

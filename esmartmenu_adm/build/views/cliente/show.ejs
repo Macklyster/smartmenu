@@ -1,0 +1,27 @@
+<section class="content-header">
+	<h1>
+		Categoria
+		<small>Editar</small>
+	</h1>
+
+	<ol class="breadcrumb">
+		<li><a href="/"><i class="fa fa-dashboard"></i></a></li>
+		<li class="active">Categoria Editar</li>
+	</ol>
+</section>
+
+<section class="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary">
+				<div class="col-xs-12">
+					<h4 class="box-title">Editar uma categoria</h4>
+				</div>
+
+				<form action="/categoria/<%= categoria._id %>?_method=PUT" method="POST" role="form">
+					<% include ./../partials/categoria/form %>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

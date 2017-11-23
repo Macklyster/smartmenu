@@ -1,7 +1,15 @@
 module.exports = (app) => {
 	app.use('/', require('./routes/main'))
+	app.use('/banner', require('./routes/banner'))
+	app.use('/de15dias', require('./routes/dash'))
+	app.use('/cliente', require('./routes/cliente'))
 	app.use('/categoria', require('./routes/categoria'))
 	app.use('/produto', require('./routes/produto'))
 	app.use('/usuario', require('./routes/usuario'))
 	app.use('/auth', require('./routes/auth'))
+	app.use('/relcliente', require('./routes/relcliente'))
+	app.use('/relprodutosmaisvendido', require('./routes/relprodutosmaisvendido'))
+	app.use('/relvendaperiodo', require('./routes/relvendaperiodo'))
+	//app.use('/maingraficos', require('./routes/maingraficos'))
+	//app.use('/jsongrafico', require('./routes/jsongrafico'))
 }

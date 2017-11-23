@@ -10,5 +10,5 @@ require('./src/views/helpers')(app)
 require('./src/index')(app)
 
 app.listen(app.get('port'), () => {
-	console.log('Express server has been started')
+	console.log('O servidor Express foi iniciado')
 })

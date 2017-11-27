@@ -17,6 +17,6 @@ module.exports = (req, res) => {
 			})
 		})
 		.catch((error) => {
-			return res.redirect('/Produto')
+			return res.redirect('/produto')
 		})
 }

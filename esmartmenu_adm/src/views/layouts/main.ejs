@@ -2,132 +2,300 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>
-		<%= title %>
-	</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%= title %>
+    </title>
 
-	<link rel="stylesheet" href="/css/buttons.dataTables.min.css">
-	<link rel="stylesheet" href="/css/jquery-ui.css">
-	<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/css/application.css">
-	<link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
 
 </head>
 
 <body class="main-wrap hold-transition skin-green sidebar-mini">
 
-	<% include ./../partials/main/header %>
+    <% include ./../partials/main/header %>
 
-		<main class="content-wrapper">
-			<%- body %>
-		</main>
+        <main class="content-wrapper">
+            <%- body %>
+        </main>
 
-		<% include ./../partials/main/footer %>
+        <% include ./../partials/main/footer %>
 
-			<script src="/jquery/dist/jquery.min.js"></script>
-			<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-			<script src="/js/theme.js"></script>
-			<script src="/js/app.js"></script>
-			<script src="/js/jspdf.debug.js"></script>
-			<script src="/js/jquery.techbytarun.excelexportjs.min.js"></script>
-			<script src="/js/bootstrap-datepicker.min.js"></script>
-			<script src="/js/Chart.min.js"></script>
-			<script src="/js/jquery.dataTables.min.js"></script>
-			<script src="/js/dataTables.buttons.min.js"></script>
-			<script src="/js/jszip.min.js"></script>
-			<script src="/js/pdfmake.min.js"></script>
-			<script src="/js/vfs_fonts.js"></script>
-			<script src="/js/buttons.html5.min.js"></script>
-			<script src="/js/Portuguese-Brasil.json"></script>
-			<script src="/js/jquery-ui.js"></script>
+            <script src="/jquery/dist/jquery.min.js"></script>
+            <script src="/js/jquery-3.2.1.min.js"></script>
+            <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="/js/theme.js"></script>
+            <script src="/js/app.js"></script>
+            <script src="/js/jspdf.debug.js"></script>
+            <script src="/js/jquery.techbytarun.excelexportjs.min.js"></script>
+            <script src="/js/bootstrap-datepicker.min.js"></script>
+            <script src="/js/Chart.min.js"></script>
+            <script src="/js/jquery.dataTables.min.js"></script>
+            <script src="/js/dataTables.buttons.min.js"></script>
+            <script src="/js/jszip.min.js"></script>
+            <script src="/js/pdfmake.min.js"></script>
+            <script src="/js/vfs_fonts.js"></script>
+            <script src="/js/buttons.html5.min.js"></script>
+            <script src="/js/jquery-ui.js"></script>
+            <script src="/js/moment.js"></script>
 </body>
 
 </html>
-
 <script>
+    $('#relcliente').DataTable({
+        dom: 'Bfrtip',
+        language: {
+            paginate: {
+                "previous": "Anterior",
+                "next": "Próximo"
+            },
+            "lengthMenu": "Exibir _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - desculpe",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(Filtrado de _MAX_ registros totais)",
+            "search": "Buscar por:",
+            buttons: {
+                copyTitle: "Copiado para área de tranferência.",
+                copySuccess: {
+                    _: "Copiado %d linhas",
+                    1: "Copiado uma linha"
+                }
+            }
+        },
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
 
-	$('#relcliente').DataTable({
-		dom: 'Bfrtip',
-		language: {
-			paginate: {
-				"previous": "Anterior",
-				"next": "Próximo"
-			},
-			"lengthMenu": "Exibir _MENU_ registros por página",
-			"zeroRecords": "Nada encontrado - desculpe",
-			"info": "Mostrando página _PAGE_ de _PAGES_",
-			"infoEmpty": "Nenhum registro disponível",
-			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
-			"search": "Buscar por:"
-		},
-		buttons: [
-			'copyHtml5',
-			'excelHtml5',
-			'csvHtml5',
-			'pdfHtml5'
-		]
-	});
+    $('#relprodutosmaisvendidos').DataTable({
+        dom: 'Bfrtip',
+        language: {
+            paginate: {
+                "previous": "Anterior",
+                "next": "Próximo"
+            },
+            "lengthMenu": "Exibir _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - desculpe",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(Filtrado de _MAX_ registros totais)",
+            "search": "Buscar por:",
+            buttons: {
+                copyTitle: "Copiado para área de tranferência.",
+                copySuccess: {
+                    _: "Copiado %d linhas",
+                    1: "Copiado uma linha"
+                }
+            }
+        },
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
 
-	$('#relprodutosmaisvendidos').DataTable({
-		dom: 'Bfrtip',
-		language: {
-			paginate: {
-				"previous": "Anterior",
-				"next": "Próximo"
-			},
-			"lengthMenu": "Exibir _MENU_ registros por página",
-			"zeroRecords": "Nada encontrado - desculpe",
-			"info": "Mostrando página _PAGE_ de _PAGES_",
-			"infoEmpty": "Nenhum registro disponível",
-			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
-			"search": "Buscar por:"
-		},
-		buttons: [
-			'copyHtml5',
-			'excelHtml5',
-			'csvHtml5',
-			'pdfHtml5'
-		]
-	});
+    $('#relvendasnoperiodo').DataTable({
+        dom: 'Bfrtip',
+        language: {
+            paginate: {
+                "previous": "Anterior",
+                "next": "Próximo"
+            },
+            "lengthMenu": "Exibir _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - desculpe",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(Filtrado de _MAX_ registros totais)",
+            "search": "Buscar por:",
+            buttons: {
+                copyTitle: "Copiado para área de tranferência.",
+                copySuccess: {
+                    _: "Copiado %d linhas",
+                    1: "Copiado uma linha"
+                }
+            }
+        },
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
 
-	$('#relvendasnoperiodo').DataTable({
-		dom: 'Bfrtip',
-		language: {
-			paginate: {
-				"previous": "Anterior",
-				"next": "Próximo"
-			},
-			"lengthMenu": "Exibir _MENU_ registros por página",
-			"zeroRecords": "Nada encontrado - desculpe",
-			"info": "Mostrando página _PAGE_ de _PAGES_",
-			"infoEmpty": "Nenhum registro disponível",
-			"infoFiltered": "(Filtrado de _MAX_ registros totais)",
-			"search": "Buscar por:"
-		},
-		buttons: [
-			'copyHtml5',
-			'excelHtml5',
-			'csvHtml5',
-			'pdfHtml5'
-		]
-	});
+    $(function() {
+        var dateFormat = "dd/mm/yy",
+            from = $("#from")
+            .datepicker({
+                defaultDate: "-1w",
+                changeMonth: true,
+                numberOfMonths: 3,
+                dateFormat: dateFormat
+            })
+            .on("change", function() {
+                let date = getDate(this);
+                to.datepicker("option", "minDate", date);
+                if (date) {
+                    $('#from_hide').val(moment.utc(date).format('YYYY-MM-DD'));
+                }
+            }),
+            to = $("#to").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 3,
+                dateFormat: dateFormat
+            })
+            .on("change", function() {
+                let date = getDate(this);
+                from.datepicker("option", "maxDate", date);
+                if (date) {
+                    $('#to_hide').val(moment.utc(date).format('YYYY-MM-DD'));
+                }
+            });
 
-	$("#datepickerini").datepicker({
-		changeMonth: true,
-		changeYear: true,
-		format: 'dd/mm/yyyy',
-		startDate: '-3d'
-	});
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
 
-	$("#datepickerfim").datepicker({
-		changeMonth: true,
-		changeYear: true,
-		format: 'dd/mm/yyyy',
-		startDate: '-3d'
-	});
+            return date;
+        }
+    });
 
+
+    var dashvendasperiodocont = document.getElementById('dashvendasperiodo').getContext('2d')
+
+    $.get('http://localhost:9001/dashvendasperiodo').done(function(result) {
+        var chart = new Chart(dashvendasperiodocont, {
+            type: 'line',
+            data: {
+                datasets: result.datasets,
+                labels: result.labels,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        })
+    })
+
+    var relclientescont = document.getElementById('jsonrelcliente').getContext('2d')
+
+    $.get('http://localhost:9001/relcliente').done(function(result) {
+        var chart = new Chart(relclientescont, {
+            type: 'pie',
+            data: {
+                datasets: result.datasets,
+                labels: result.labels,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            },
+            options: {
+
+            }
+        })
+    })
+
+    $('#jsonrelvendasperiodo').DataTable({
+        dom: 'Bfrtip',
+        language: {
+            paginate: {
+                "previous": "Anterior",
+                "next": "Próximo"
+            },
+            "lengthMenu": "Exibir _MENU_ registros por página",
+            "zeroRecords": "Nada encontrado - desculpe",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
+            "infoEmpty": "Nenhum registro disponível",
+            "infoFiltered": "(Filtrado de _MAX_ registros totais)",
+            "search": "Buscar por:"
+        },
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
+
+    $.get('http://localhost:9001/relvendasperiodo').done(function(result) {
+        var chart = new Chart(relvendasperiodocont, {
+            type: 'pie',
+            data: {
+                datasets: result.datasets,
+                labels: result.labels,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            },
+            options: {
+
+            }
+        })
+    })
 </script>

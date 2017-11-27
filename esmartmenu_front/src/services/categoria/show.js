@@ -29,20 +29,4 @@ module.exports = (req, res) => {
 		.catch((error) => {
 			console.log(error)
 		})
-
-	/*Produto
-		.find({
-			enable: true
-		})
-		.then((produtos) => {
-			return res.render('categoria/show', {
-				title: 'Produto por Categoria SmartMenu',
-				layout: 'layouts/main',
-				user: req.user || undefined,
-				produtos
-			})
-		})
-		.catch((error) => {
-			console.log(error)
-		})*/
 }

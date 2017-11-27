@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        carrinhos mais vendidos
+        Vendas no período
         <small>Relatório</small>
     </h1>
 
@@ -10,7 +10,7 @@
                 <i class="fa fa-dashboard"></i>
             </a>
         </li>
-        <li class="active">Lista de carrinhos mais vendidos</li>
+        <li class="active">Lista de Vendas no período</li>
     </ol>
 </section>
 <div id="editor"></div>
@@ -51,42 +51,38 @@
                 </form>
                 <div class="box-body">
                     <div class="table-responsive">
-                        <table id="relvendasnoperiodo" class="table table-hover">
+                        <table id="relprodutosmaisvendidos" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Categoria</th>
-                                    <th>Quant. Vendas</th>
+                                    <th>Cliente</th>
+                                    <th>Cidade</th>
+                                    <th>Data Venda</th>
                                     <th>Valor</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <% for (var i = 0; i < carrinhos.length; i++) { 
-									for (var j = 0; j < carrinhos[i].produtos.length; j++) { 
-								%>
-                                    <tr>
+                                <% for (var i = 0; i < carrinhos.length; i++) { %>
+                                    <tr ng-repeat="carrinhos as cards | filter: filtroproduto">
                                         <td>
-                                            <%= carrinhos[i].produtos[j].produto.nome %>
+                                            <%= carrinhos[i].cliente.nome %>
                                         </td>
                                         <td>
-                                            <%= carrinhos[i].produtos[j].produto.categoria.nome %>
+                                            <%= carrinhos[i].cliente.endereco.cidade %>
                                         </td>
                                         <td>
-                                            <%= carrinhos[i].produtos[j].quantidade %>
+                                            <%= moment( carrinhos[i].criado ).format('DD-MM-YYYY') %>
                                         </td>
                                         <td>
                                             <%= carrinhos[i].total %>
                                         </td>
                                     </tr>
-                                    <% }
-									}
-									%>
+                                    <% } %>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Nome</th>
-                                    <th>Categoria</th>
-                                    <th>Quant. Vendas</th>
+                                    <th>Cliente</th>
+                                    <th>Cidade</th>
+                                    <th>Data Venda</th>
                                     <th>Valor</th>
                                 </tr>
                             </tfoot>

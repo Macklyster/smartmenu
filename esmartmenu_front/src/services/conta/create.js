@@ -28,8 +28,8 @@ module.exports = (req, res) => {
 
 	Cliente.register(data, req.body.senha, (error, conta) => {
 		if (error) {
-			console.log(data);
-			//return res.redirect('/')
+			//console.log(data);
+			return res.redirect('/')
 		}
 		//console.log(data);
 		return res.redirect('/conta')

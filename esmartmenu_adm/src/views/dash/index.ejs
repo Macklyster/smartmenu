@@ -1,26 +1,23 @@
-Teste
+<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="card">
+					<div class="card-header">
+						By date
+					</div>
+					<div class="card-block">
+						<canvas id="bydate"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="card">
+					<div class="card-header">
+						By 15 last days
+					</div>
+					<div class="card-block">
+						<canvas id="dashvendasperiodo"></canvas>
+					</div>
+				</div>
+			</div>
 
-<div class="chart">
-    <!-- Sales Chart Canvas -->
-    <canvas id="produto15dias" style="height: 180px;"></canvas>
-</div>
-
-
-<script>
-    var conteudo = document.getElementById('produto15dias').getContext('2d')
-
-    $.get('http://localhost:9001/de15dias').done(function (result) {
-        var chart = new Chart(conteudo, {
-            type: 'line',
-            data: {
-                datasets: result.datasets,
-                labels: result.labels
-            },
-            options: {
-
-            }
-        })
-        alert('teste');
-    })
-
-</script>
+		</div>

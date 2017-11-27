@@ -65,6 +65,11 @@ const Cliente = new mongoose.Schema({
 			type: Number,
 			required: true
 		}
+	},
+	criado: {
+		type: Date,
+		required: true,
+		default: new Date()
 	}
 })
 

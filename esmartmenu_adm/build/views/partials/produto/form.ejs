@@ -1,50 +1,49 @@
 <div class="box-body">
-	<div class="form-group">
-		<label for="nome">Nome</label>
-		<input type="text" name="nome" class="form-control" placeholder="Digite o nome do produto" value="<%= produto.nome %>">
-	</div>
-	<div class="form-group">
-		<label for="image">Image</label>
-		<input type="file" name="images3" class="form-control">
-	</div>
-	<div class="form-group">
-		<label for="descricao">Descrição</label>
-		<input type="text" name="desc" class="form-control" placeholder="Insira a descrição do produto" value="<%= produto.desc %>">
-	</div>
-	<div class="form-group">
-		<label for="preco_venda">Preço Venda</label>
-		<div class="input-group">
-			<span class="input-group-addon">R$</span>
-			<input type="number" step="0.01" name="preco_venda" class="form-control" placeholder="Insira seu produto de preço de venda" value="<%= produto.preco_venda %>">
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="desconto">Desconto</label>
-		<div class="input-group">
-			<input type="number" step="0.01" name="desconto" class="form-control" placeholder="Insira seu produto com desconto" value="<%= produto.desconto %>">
-			<span class="input-group-addon">%</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="quantidade">Quantidade</label>
-		<input type="number" step="0.01" name="quantidade" class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>">
-	</div>
-	<div class="form-group">
-		<label for="categoria">Categoria</label>
-		<select name="categoria" class="form-control">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" class="form-control" placeholder="Digite o nome do produto" value="<%= produto.nome %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-1">
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" name="images3" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" name="desc" class="form-control" placeholder="Insira a descrição do produto" value="<%= produto.desc %>" required="" data-parsley-length="[10, 40]" data-parsley-group="block-1">
+    </div>
+    <div class="form-group">
+        <label for="preco_venda">Preço Venda</label>
+        <div class="input-group">
+            <span class="input-group-addon">R$</span>
+            <input type="text" name="preco_venda" class="form-control dinheiro" placeholder="Insira seu produto de preço de venda" value="<%= produto.preco_venda %>" required="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="desconto">Desconto</label>
+        <div class="input-group">
+            <input type="text" name="desconto" class="form-control dinheiro" placeholder="Insira seu produto com desconto" value="<%= produto.desconto %>" required="">
+            <span class="input-group-addon">%</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" step="0.01" name="quantidade" class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>" required="">
+    </div>
+    <div class="form-group">
+        <label for="categoria">Categoria</label>
+        <select name="categoria" class="form-control" required="">
 			<% for (var i = 0; i < categorias.length; i++) { %>
 				<option value="<%= categorias[i]._id %>"><%= categorias[i].nome %></option>
-				<!--categorias[i]._id, produto.categoria._id) %>><%= categorias[i].nome %></option-->
 			<% } %>
 		</select>
-	</div>
-	<div class="form-group">
-		<label for="">Habilitar?</label>
-		<input type="checkbox" name="enable" value="<%= produto.enable %>" checked="<%= checked(produto.enable)%>">
-	</div>
+    </div>
+    <div class="form-group">
+        <label for="">Habilitar?</label>
+        <input type="checkbox" name="enable" value="<%= produto.enable %>" checked="<%= checked(produto.enable)%>" required="">
+    </div>
 </div>
 
 <div class="box-footer">
-	<button type="submit" class="btn btn-primary">Salvar</button>
-	<a href="/produto"   class="btn btn-default">Voltar</a>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="/produto" class="btn btn-default">Voltar</a>
 </div>

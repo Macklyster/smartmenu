@@ -4,15 +4,15 @@
 
 	<div class="form-group">
 		<label for="name">Nome</label>
-		<input type="text" name="nome" class="form-control" placeholder="Digite o nome da categoria" value="<%= categoria.nome %>">
+		<input type="text" name="nome" class="form-control" placeholder="Digite o nome da categoria" value="<%= categoria.nome %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-1">
 	</div>
 	<div class="form-group">
 		<label for="description">Descrição</label>
-		<input type="text" name="desc" class="form-control" placeholder="Insira sua descrição para a categoria" value="<%= categoria.desc %>">
+		<input type="text" name="desc" class="form-control" placeholder="Insira sua descrição para a categoria" value="<%= categoria.desc %>" required="" data-parsley-length="[10, 40]" data-parsley-group="block-1">
 	</div>
 	<div class="form-group">
 		<label for="">Habilitar?</label>
-		<input type="checkbox" name="enable" value="<%= categoria.enable %>" checked="<%= checked(categoria.enable)%>">
+		<input type="checkbox" name="enable" value="<%= categoria.enable %>" checked="<%= checked(categoria.enable)%>" required="">
 	</div>
 </div>
 

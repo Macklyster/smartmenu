@@ -23,7 +23,8 @@ module.exports = (req, res) => {
 			numero: req.body.numero_entrega,
 			cidade: req.body.cidade,
 			bairro: req.body.bairro,
-			cep: req.body.cep
+			cep: req.body.cep,
+			estado: req.body.estado
 		}
 	}
 

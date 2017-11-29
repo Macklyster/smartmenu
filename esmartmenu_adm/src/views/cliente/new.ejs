@@ -18,8 +18,10 @@
 					<h4 class="box-title">Criar novo cliente</h4>
 				</div>
 
-				<form action="/cliente" method="POST" role="form">
-					<% include ./../partials/cliente/form %>
+				<form class="demo-form" action="/cliente" method="POST" role="form" data-parsley-validate="">
+					<div data-parsley-check-children="2" data-parsley-validate-if-empty="">
+						<% include ./../partials/cliente/form %>
+					</div>
 				</form>
 			</div>
 		</div>

@@ -12,17 +12,17 @@
 
 		<div class="form-group">
 			<label for="name">Nome</label>
-			<input type="text" name="nome" class="form-control" placeholder="Digite seu nome completo" value="<%= cliente.nome %>">
+			<input type="text" name="nome" class="form-control" placeholder="Digite seu nome completo" value="<%= cliente.nome %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-1">
 		</div>
 
 		<div class="form-group">
 			<label for="email">Email</label>
-			<input type="email" name="email" class="form-control" placeholder="Entre com um email válido" value="<%= cliente.email %>">
+			<input type="email" name="email" class="form-control" placeholder="Entre com um email válido" value="<%= cliente.email %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-1">
 		</div>
 
 		<div class="form-group">
 			<label for="senha">Senha</label>
-			<input type="password" name="senha" class="form-control" placeholder="Digite sua senha secreta" value="<%= cliente.senha %>">
+			<input type="password" name="senha" class="form-control" placeholder="Digite sua senha secreta" value="<%= cliente.senha %>" required="" data-parsley-length="[6, 8]" data-parsley-group="block-1">
 		</div>
 
 		<div class="row">
@@ -33,17 +33,17 @@
 		</div>
 		<div class="form-group">
 			<label for="name">Data Nascimento</label>
-			<input type="text" name="data_nasc" class="form-control" placeholder="XX/XX/XXXXX" value="<%= cliente.data_nasc %>">
+			<input type="text" name="data_nasc" class="form-control" placeholder="XX/XX/XXXXX" value="<%= cliente.data_nasc %>"  required="">
 		</div>
 
 		<div class="form-group">
 			<label for="name">ID (CPF)</label>
-			<input type="text" name="cpf" class="form-control" placeholder="XXX.XXX.XXX-XX" value="<%= cliente.id %>">
+			<input type="text" name="cpf" class="form-control" placeholder="XXX.XXX.XXX-XX" value="<%= cliente.id %>" required="" data-parsley-length="[11]" data-parsley-group="block-1">
 		</div>
 
 		<div class="form-group">
 			<label for="name">Celular</label>
-			<input type="tel" name="celular" class="form-control" placeholder="(XX) XXXXX-XXXX" value="<%= cliente.celular %>">
+			<input type="tel" name="celular" class="form-control" placeholder="(XX) XXXXX-XXXX" value="<%= cliente.celular %>" required="">
 		</div>
 
 		<div class="row">
@@ -55,22 +55,32 @@
 
 		<div class="form-group">
 			<label for="name">Rua</label>
-			<input type="text" name="rua" class="form-control" placeholder="Digite o nome da sua rua" value="<%= cliente.endereco.rua %>">
+			<input type="text" name="rua" class="form-control" placeholder="Digite o nome da sua rua" value="<%= cliente.endereco.rua %>" required="" data-parsley-length="[8, 40]" data-parsley-group="block-2">
 		</div>
 
 		<div class="form-group">
 			<label for="name">Bairro</label>
-			<input type="text" name="bairro" class="form-control" placeholder="Entre em seu bairro" value="<%= cliente.endereco.bairro %>">
+			<input type="text" name="bairro" class="form-control" placeholder="Entre em seu bairro" value="<%= cliente.endereco.bairro %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-1">
 		</div>
 
 		<div class="form-group">
 			<label for="name">Número</label>
-			<input type="number" name="numero_entrega" class="form-control" placeholder="Coloque seu número" value="<%= cliente.endereco.numero %>">
+			<input type="number" name="numero_entrega" class="form-control" placeholder="Coloque seu número" value="<%= cliente.endereco.numero %>" required="" data-parsley-length="[1, 4]" data-parsley-group="block-3">
 		</div>
 
 		<div class="form-group">
 			<label for="name">Cidade</label>
-			<input type="text" name="cidade" class="form-control" placeholder="Digite o nome da sua cidade" value="<%= cliente.endereco.cidade %>">
+			<input type="text" name="cidade" class="form-control" placeholder="Digite o nome da sua cidade" value="<%= cliente.endereco.cidade %>" required="" data-parsley-length="[4, 20]" data-parsley-group="block-4">
+		</div>
+
+		<div class="form-group">
+			<label for="name">CEP</label>
+			<input type="text" name="cpe" class="form-control" placeholder="Digite o cep da sua cidade" value="<%= cliente.endereco.cep %>" required="">
+		</div>
+
+		<div class="form-group">
+			<label for="name">Estado</label>
+			<input type="text" name="estado" class="form-control" placeholder="Digite o estado da sua cidade" value="<%= cliente.endereco.estado %>" required="">
 		</div>
 
 		<div class="form-group">

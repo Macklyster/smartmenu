@@ -17,17 +17,17 @@ const Produto = new mongoose.Schema({
 		required: true
 	},
 	preco_venda: {
-		type: Number,
+		type: String,
 		required: true,
 		default: 0
 	},
 	preco_real: {
-		type: Number,
+		type: String,
 		required: true,
 		default: 0
 	},
 	desconto: {
-		type: Number,
+		type: String,
 		default: 0
 	},
 	categoria: {

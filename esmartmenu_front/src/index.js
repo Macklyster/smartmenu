@@ -4,5 +4,5 @@ module.exports = (app) => {
     app.use('/categoria', require('./routes/categoria'))
     app.use('/produto', require('./routes/produto'))
     app.use('/carrinho', require('./routes/carrinho'))
-	app.use('/pedido', require('./routes/pedido'))
+    app.use('/pedido', require('./routes/pedido'))
 }

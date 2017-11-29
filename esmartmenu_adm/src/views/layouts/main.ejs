@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/application.css">
     <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/css/parsley.css">
 
 </head>
 
@@ -45,6 +46,7 @@
             <script src="/js/buttons.html5.min.js"></script>
             <script src="/js/jquery-ui.js"></script>
             <script src="/js/moment.js"></script>
+            <script src="/js/parsley.js"></script>
 </body>
 
 </html>
@@ -298,4 +300,32 @@
             }
         })
     })
+
+    $(function() {
+        Parsley.addValidator('checkChildren', {
+            messages: {
+                en: 'Você deve preencher corretamente pelo menos um desses blocos!'
+            },
+            requirementType: 'integer',
+            validate: function(_value, requirement, instance) {
+                for (var i = 1; i <= requirement; i++)
+                    if (instance.parent.isValid({
+                            group: 'block-' + i,
+                            force: true
+                        }))
+                        return true; // One section is filled, this check is valid
+                return false; // No section is filled, this validation fails
+            }
+        });
+
+        Parsley.on('form:submit', function() {
+            alert("O formulário seria enviado neste momento. " +
+                "Para esta demo, interrompemos o processamento.");
+            return false; // Don't submit for this demo
+        });
+
+        $('.demo-form').parsley({
+            inputs: Parsley.options.inputs + ',[data-parsley-check-children]'
+        });
+    });
 </script>

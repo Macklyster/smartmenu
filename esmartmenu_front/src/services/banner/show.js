@@ -1,19 +1,20 @@
 const Banner = require('./../../schemas/banner')
 
 module.exports = (req, res) => {
-	Banner
-		.findById(req.params.id)
-		.then((banner) => {
-			if (!banner) {
-				return res.redirect('/banner')
-			}
+    Banner
+        .findOne({
+            slug: req.params.slug
+        })
+        //.populate('categoria')
+        .then((banner) => {
+            return res.render('banner/show', {
+                title: 'Produto SmartMenu',
+                layout: 'layouts/main',
+                user: req.user || undefined,
+                banner
+            })
+        })
+        .catch((error) => {
 
-			return res.render('banner/show', {
-				title: 'Banner',
-				layout: 'layouts/main',
-				user: req.user || undefined	,
-				banner
-			})
-
-		})
+        })
 }

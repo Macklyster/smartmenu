@@ -11,31 +11,31 @@ const mongoose = require('mongoose')
 const expressSession = require('express-session')
 
 module.exports = (app) => {
-	app.set('port', 9000)
-	app.set('views', path.join(__dirname, './../../../build/views'))
-	app.set('view engine', 'ejs')
-	app.set('layout extractScripts', true)
-	app.set('layout extractStyles', true)
+    app.set('port', 9000)
+    app.set('views', path.join(__dirname, './../../../build/views'))
+    app.set('view engine', 'ejs')
+    app.set('layout extractScripts', true)
+    app.set('layout extractStyles', true)
 
-	app.use(express.static(path.join(__dirname, './../../../build')))
-	app.use(express.static(path.join(__dirname, './../../../bower_components')))
+    app.use(express.static(path.join(__dirname, './../../../build')))
+    app.use(express.static(path.join(__dirname, './../../../bower_components')))
 
-	app.use(expressEjsLayouts)
-	app.use(bodyParser.json())
-	app.use(bodyParser.urlencoded({ extended: false }))
-	app.use(morgan('dev'))
-	app.use(methodOverride('_method'))
-	app.use(expressSession({
-		secret: '#*!#&*!#@HADHAKJDKA',
-		resave: false,
-		saveUninitialized: true
-	}))
-	app.use(passport.initialize())
-	app.use(passport.session())
+    app.use(expressEjsLayouts)
+    app.use(bodyParser.json())
+    app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(morgan('dev'))
+    app.use(methodOverride('_method'))
+    app.use(expressSession({
+        secret: '#*!#&*!#@HADHAKJDKA',
+        resave: false,
+        saveUninitialized: true
+    }))
+    app.use(passport.initialize())
+    app.use(passport.session())
 
-	passport.use(new LocalStrategy(Cliente.authenticate()))
-	passport.serializeUser(Cliente.serializeUser())
-	passport.deserializeUser(Cliente.deserializeUser())
+    passport.use(new LocalStrategy(Cliente.authenticate()))
+    passport.serializeUser(Cliente.serializeUser())
+    passport.deserializeUser(Cliente.deserializeUser())
 
-	mongoose.connect('mongodb://localhost:27017/e_smartmenu', { useMongoClient: true })
+    mongoose.connect('mongodb://localhost:27017/smartmenu', { useMongoClient: true })
 }

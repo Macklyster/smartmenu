@@ -1,0 +1,53 @@
+<div id="slider" class="carousel slide" data-ride="carousel">
+    <% for (var i = 0; i < banners.length; i++) {%>
+        <div class="carousel-inner">
+            <div-- class="item active">
+                <div class="fill img-responsive">
+                    <img src="<%= banners[i].image %>" class="img-responsive" alt="">
+                </div>
+
+
+                <!--div class="fill img-responsive" style="background-image:url(/images/slide/1.jpg)"></div-->
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="btn-group" role="group">
+                            <a href="/" class="btn btn-red-default upper">
+								Ver Mais
+							</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <!--div class="item">
+            <div class="fill img-responsive" style="background-image:url(/images/slide/2.jpg)"></div>
+            <div class="carousel-caption">
+                <div class="row">
+                    <div class="btn-group" role="group">
+                        <a href="/" class="btn btn-red-default upper">
+								Ver Mais
+							</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div-- class="item">
+            <div class="fill img-responsive" style="background-image:url(/images/slide/3.jpg)"></div>
+            <div class="carousel-caption">
+                <div class="row">
+                    <div class="btn-group" role="group">
+                        <a href="/" class="btn btn-red-default upper">
+								Ver Mais
+							</a>
+                    </div>
+                </div>
+            </div>
+        </div-->
+        <a href="#slider" class="left carousel-control" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a href="#slider" class="right carousel-control" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+        <% } %>
+</div>

@@ -15,9 +15,7 @@ module.exports = (req, res) => {
 
 
     Relclientes
-    //.find()
         .find(options)
-        //.populate('endereco')
         .then((clientes) => {
             if (!clientes) {
                 return res.redirect('/relcliente')

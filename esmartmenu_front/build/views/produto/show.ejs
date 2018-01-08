@@ -1,45 +1,47 @@
 <section id="produto-detalhe">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-6 img-preview">
-				<img src="<%= produto.image %>" alt="" class="img-responsive">
-			</div>
-			<div class="col-xs-12 col-md-6 produto-info">
-				<h1 class="upper"><%= produto.nome %></h1>
-				<div class="pay-info">
-					<p>
-						<strong>R$ <%= produto.preco_venda %>,00</strong>
-					</p>
-				</div>
-				<div class="other-info">
-					<ul class="list-group">
-						<li class="list-group-item">
-							<label for="">Fora de estoque:</label>
-							<% if (produto.enable) { %>
-								<span class="label label-success">Sim</span>
-							<% } else { %>
-								<span class="label label-warning">Não</span>
-							<% } %>
-						</li>
-					</ul>
-				</div>
-				<div class="pay-action">
-					<form action="/carrinho" method="POST">
-						<input type="hidden" name="produto_id" value="<%= produto._id %>" >
-						<input type="hidden" name="produto_slug" value="<%= produto.slug %>" >
-						<button onclick="carrinho()" class="btn btn-block btn-red-default upper btn-add-cart">Adicionar ao Carrinho</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12 descricao">
-				<h4 class="title upper">Detalhes</h4>
-				<hr>
-				<p>
-					<% produto.desc %>
-				</p>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 img-preview">
+                <img src="<%= produto.image %>" alt="" class="img-responsive">
+            </div>
+            <div class="col-xs-12 col-md-6 produto-info">
+                <h1 class="upper">
+                    <%= produto.nome %>
+                </h1>
+                <div class="pay-info">
+                    <p>
+                        <strong class="money dinheiro">R$ <%= produto.preco_venda %></strong>
+                    </p>
+                </div>
+                <div class="other-info">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label for="">Fora de estoque:</label>
+                            <% if (produto.enable) { %>
+                                <span class="label label-success">Sim</span>
+                                <% } else { %>
+                                    <span class="label label-warning">Não</span>
+                                    <% } %>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pay-action">
+                    <form action="/carrinho" method="POST">
+                        <input type="hidden" name="produto_id" value="<%= produto._id %>">
+                        <input type="hidden" name="produto_slug" value="<%= produto.slug %>">
+                        <button onclick="carrinho()" class="btn btn-block btn-red-default upper btn-add-cart">Adicionar ao Carrinho</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 descricao">
+                <h4 class="title upper">Detalhes</h4>
+                <hr>
+                <p>
+                    <% produto.desc %>
+                </p>
+            </div>
+        </div>
+    </div>
 </section>

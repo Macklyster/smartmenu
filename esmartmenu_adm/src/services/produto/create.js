@@ -27,9 +27,10 @@ module.exports = (req, res) => {
 	Produto
 		.create(req.body)
 		.then((produto) => {
+			console.log(produto)
 			return res.redirect('/produto')
 		})
 		.catch((error) => {
-
+			console.log(produto)
 		})
 }

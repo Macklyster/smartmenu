@@ -1,9 +1,8 @@
 const Cliente = require('./../../schemas/cliente')
 
 module.exports = (req, res) => {
-
     Cliente
-        .find()
+        .find({})
         .then((clientes) => {
             if (!clientes) {
                 return res.redirect('/cliente')
@@ -12,7 +11,7 @@ module.exports = (req, res) => {
             return res.render('cliente/index', {
                 title: 'Admin E-Smartmenu',
                 layout: 'layouts/main',
-                user: req.user || undefined,
+                usuario: req.usuario || undefined,
                 clientes
             })
         })

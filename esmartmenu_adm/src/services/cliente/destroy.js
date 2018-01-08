@@ -1,13 +1,13 @@
-const Categoria = require('./../../schemas/categoria')
+const Cliente = require('./../../schemas/cliente')
 
 module.exports = (req, res) => {
 
-	Categoria
-		.findByIdAndRemove(req.params.id)
-		.then((categoria) => {
-			return res.redirect('/categoria')
-		})
-		.catch((error) => {
+    Cliente
+        .findByIdAndRemove(req.params.id)
+        .then((cliente) => {
+            return res.redirect('/cliente')
+        })
+        .catch((error) => {
 
-		})
+        })
 }

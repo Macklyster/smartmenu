@@ -15,19 +15,19 @@
         <label for="preco_venda">Preço Venda</label>
         <div class="input-group">
             <span class="input-group-addon">R$</span>
-            <input type="text" name="preco_venda" class="form-control dinheiro" placeholder="Insira seu produto de preço de venda" value="<%= produto.preco_venda %>" required="">
+            <input type="text" name="preco_venda" class="form-control" data-mask="#.##0,00" data-mask-reverse="true" placeholder="Insira seu produto de preço de venda" value="<%= produto.preco_venda %>" required="">
         </div>
     </div>
     <div class="form-group">
         <label for="desconto">Desconto</label>
         <div class="input-group">
-            <input type="text" name="desconto" class="form-control dinheiro" placeholder="Insira seu produto com desconto" value="<%= produto.desconto %>" required="">
+            <input type="text" name="desconto" class="form-control" data-mask="#.##0,00" data-mask-reverse="true" placeholder="Insira seu produto com desconto" value="<%= produto.desconto %>" required="">
             <span class="input-group-addon">%</span>
         </div>
     </div>
     <div class="form-group">
         <label for="quantidade">Quantidade</label>
-        <input type="number" step="0.01" name="quantidade" class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>" required="">
+        <input type="text" name="quantidade" data-mask="#.##0" data-mask-reverse="true"  class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>" required="">
     </div>
     <div class="form-group">
         <label for="categoria">Categoria</label>

@@ -1,64 +1,75 @@
 <section class="content-header">
-	<h1>
-		Cliente
-		<small>Lista</small>
-	</h1>
+    <h1>
+        Cliente
+        <small>Lista</small>
+    </h1>
 
-	<ol class="breadcrumb">
-		<li><a href="/"><i class="fa fa-dashboard"></i></a></li>
-		<li class="active">Cliente Lista</li>
-	</ol>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i></a></li>
+        <li class="active">Cliente Lista</li>
+    </ol>
 </section>
 
 <section class="content">
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="box box-primary">
-				<div class="box-header">
-					<h3>Listagem</h3>
-					<div class="row">
-						<div class="col-xs-12">
-							<a href="/cliente/new" class="btn btn-success">Novo</a>
-						</div>
-					</div>
-				</div>
-				<div class="box-body">
-					<div class="table-responsive">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>Nome</th>
-									<th>E-mail</th>
-									<th>Contato</th>
-									<th>Endereço</th>
-									<th>Ações</th>
-								</tr>
-							</thead>
-							<tbody>
-								<% for (var i = 0; i < clientes.length; i++) { %>
-									<tr>
-										<td><%= clientes[i].nome %></td>
-										<td><%= clientes[i].email %></td>
-										<td><%= clientes[i].celular %></td>
-										<td><%= clientes[i].endereco.rua %> - <%= clientes[i].endereco.numero %> - <%= clientes[i].endereco.vizinhaca %> - <%= clientes[i].endereco.cidade %></td>
-										<td>
-											<a href="/cliente/<%= clientes[i]._id %>" class="btn btn-default btn-small">
-												<i class="fa fa-eye"></i>
-											</a>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3>Listagem</h3>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a href="/cliente/new" class="btn btn-success">Novo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>E-mail</th>
+                                    <th>Contato</th>
+                                    <th>Endereço</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for (var i = 0; i < clientes.length; i++) { %>
+                                    <tr>
+                                        <td>
+                                            <%= clientes[i].nome %>
+                                        </td>
+                                        <td>
+                                            <%= clientes[i].email %>
+                                        </td>
+                                        <td data-mask="(00) 00000-0000">
+                                            <%= clientes[i].celular %>
+                                        </td>
+                                        <td>
+                                            <%= clientes[i].endereco.logradouro %> -
+                                                <%= clientes[i].endereco.numero %> -
+                                                    <%= clientes[i].endereco.bairro %> -
+                                                        <%= clientes[i].endereco.cidade %>
+                                        </td>
+                                        <td>
+                                            <a href="/cliente/<%= clientes[i]._id %>" class="btn btn-default btn-small">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
 
-											<form action="/cliente/<%= clientes[i]._id %>?_method=DELETE" method="POST" class="inline">
-												<button type="submit" class="btn btn-danger btn-small">
+                                            <form action="/cliente/<%= clientes[i]._id %>?_method=DELETE" method="POST" class="inline">
+                                                <button type="submit" class="btn btn-danger btn-small">
 													<i class="fa fa-trash"></i>
 												</button>
-											</form>
-										</td>
-									</tr>
-								<% } %>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -12,22 +12,22 @@
         <input type="text" name="desc" class="form-control" placeholder="Insira a descrição do produto" value="<%= produto.desc %>" required="" data-parsley-length="[10, 40]" data-parsley-group="block-1">
     </div>
     <div class="form-group">
-        <label for="preco_venda">Preço Venda</label>
+        <label for="preco_venda">Preço Real</label>
+        <div class="input-group">
+            <span class="input-group-addon">R$</span>
+            <input type="text" name="preco_real" class="form-control" data-mask="#.##0,00" data-mask-reverse="true" placeholder="Insira seu produto de preço de real" value="<%= produto.preco_venda %>" required="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="desconto">Venda</label>
         <div class="input-group">
             <span class="input-group-addon">R$</span>
             <input type="text" name="preco_venda" class="form-control" data-mask="#.##0,00" data-mask-reverse="true" placeholder="Insira seu produto de preço de venda" value="<%= produto.preco_venda %>" required="">
         </div>
     </div>
     <div class="form-group">
-        <label for="desconto">Desconto</label>
-        <div class="input-group">
-            <input type="text" name="desconto" class="form-control" data-mask="#.##0,00" data-mask-reverse="true" placeholder="Insira seu produto com desconto" value="<%= produto.desconto %>" required="">
-            <span class="input-group-addon">%</span>
-        </div>
-    </div>
-    <div class="form-group">
         <label for="quantidade">Quantidade</label>
-        <input type="text" name="quantidade" data-mask="#.##0" data-mask-reverse="true"  class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>" required="">
+        <input type="text" name="quantidade" data-mask="#.##0" data-mask-reverse="true" class="form-control" placeholder="Digite sua quantidade" value="<%= produto.quantidade %>" required="">
     </div>
     <div class="form-group">
         <label for="categoria">Categoria</label>
@@ -39,7 +39,7 @@
     </div>
     <div class="form-group">
         <label for="">Habilitar?</label>
-        <input type="checkbox" name="enable" value="<%= produto.enable %>" checked="<%= checked(produto.enable)%>" required="">
+        <input type="checkbox" name="enable" value="<%= produto.enable %>" <%=checked(produto.enable)%>>
     </div>
 </div>
 

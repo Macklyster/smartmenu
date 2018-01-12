@@ -31,12 +31,12 @@ module.exports = (req, res) => {
     }
 
     Cliente
-        .register(data, req.body.senha, (error, cliente) => {
+        .register(data, req.body.senha, (error, conta) => {
             if (error) {
-                console.log(data);
+                //console.log(data);
                 return res.redirect('/')
             }
-
-            return res.redirect('/cliente')
+            //console.log(data);
+            return res.redirect('/conta')
         })
 }

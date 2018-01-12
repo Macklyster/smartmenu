@@ -2,8 +2,6 @@ const Banner = require('./../../schemas/banner')
 
 module.exports = (req, res) => {
 
-    req.body.enable = 'enable' in req.body ? true : false
-
     Banner
         .findByIdAndUpdate(req.params.id, req.body)
         .then((banner) => {

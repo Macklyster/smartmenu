@@ -49,12 +49,11 @@ module.exports = (req, res) => {
                 Cliente
                     .findByIdAndUpdate(req.params.id, data)
                     .then((updated) => {
-                        return res.redirect('/cliente')
+                        return res.redirect('/conta/' + req.user.slug)
                     })
             })
         })
         .catch((error) => {
-            console.log(data)
-            return res.redirect('/cliente/' + req.user.slug)
+            return res.redirect('/conta/' + req.user.slug)
         })
 }

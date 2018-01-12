@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const expressEjsLayouts = require('express-ejs-layouts')
 const passport = require('passport')
-const Cliente = require('./../../schemas/cliente')
+const Usuario = require('./../../schemas/usuario')
 const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const expressSession = require('express-session')
@@ -34,9 +34,9 @@ module.exports = (app) => {
     app.use(passport.initialize())
     app.use(passport.session())
 
-    passport.use(new LocalStrategy(Cliente.authenticate()))
-    passport.serializeUser(Cliente.serializeUser())
-    passport.deserializeUser(Cliente.deserializeUser())
+    passport.use(new LocalStrategy(Usuario.authenticate()))
+    passport.serializeUser(Usuario.serializeUser())
+    passport.deserializeUser(Usuario.deserializeUser())
 
     mongoose.connect('mongodb://localhost:27017/smartmenu', { useMongoClient: true })
 }

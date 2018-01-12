@@ -55,6 +55,6 @@ module.exports = (req, res) => {
         })
         .catch((error) => {
             console.log(data)
-            return res.redirect('/cliente/' + req.usuario.slug)
+            return res.redirect('/cliente/' + req.cliente.slug)
         })
 }

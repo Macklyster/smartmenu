@@ -1,66 +1,81 @@
-<div class="panel panel-default">
-    <div class="panel-body">
-
-        <input type="hidden" name="_id" value="<%= data.id %>">
-
-        <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" name="nome" class="form-control" placeholder="Digite seu nome completo" value="<%= data.nome %>" required="" data-parsley-length="[4, 80]" data-parsley-group="block-1">
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" placeholder="Entre com um email válido" value="<%= data.email %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" class="form-control" placeholder="Digite sua senha secreta" value="<%= data.senha %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Data Nascimento</label>
-            <input type="text" name="data_nasc" class="form-control" data-mask="00/00/0000" placeholder="XX/XX/XXXXX" value="<%= data.data_nasc %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">ID (CPF)</label>
-            <input type="text" name="cpf" class="form-control cpf" data-mask="000.000.000-00" placeholder="XXX.XXX.XXX-XX" value="<%= data.id %>">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Celular</label>
-            <input type="tel" name="celular" class="form-control phone_with_ddd" data-mask="(00) 00000-0000" placeholder="(XX) XXXXX-XXXX" value="<%= data.celular %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">CEP</label>
-            <input type="text" name="cep" class="form-control cep" data-mask="00.000-000" placeholder="Digite o numero do cep" value="<%= data.endereco.cep %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Logradouro</label>
-            <input type="text" name="logradouro" class="form-control" placeholder="Digite o nome da sua rua" value="<%= data.endereco.logradouro %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Bairro</label>
-            <input type="text" name="bairro" class="form-control" placeholder="Entre em seu bairro" value="<%= data.endereco.bairro %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Número</label>
-            <input type="number" name="numero_entrega" class="form-control" placeholder="Coloque seu número" value="<%= data.endereco.numero %>" required="">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Cidade</label>
-            <input type="text" name="cidade" class="form-control" placeholder="Digite o nome da sua cidade" value="<%= data.endereco.cidade %>" required="">
-        </div>
-
-        <div class="box-footer">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="/cliente" class="btn btn-default">Voltar</a>
-        </div>
+<div class="row">
+    <hr>
+    <div class="col-xs-12">
+        <h4>..:: Geral ::..</h4>
     </div>
+</div>
+
+<input type="hidden" name="_id" value="<%= cliente.id %>">
+
+<div class="form-group">
+    <label for="name">Nome</label>
+    <input type="text" name="nome" class="form-control" placeholder="Digite seu nome completo" value="<%= cliente.nome %>" required="" data-parsley-length="[4, 80]" data-parsley-group="block-1">
+</div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="form-control" placeholder="Entre com um email válido" value="<%= cliente.email %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" class="form-control" placeholder="Digite sua senha secreta" value="<%= cliente.senha %>" required="">
+</div>
+
+
+<div class="row">
+    <hr>
+    <div class="col-xs-12">
+        <h4>..:: Pessoal ::..</h4>
+    </div>
+</div>
+<div class="form-group">
+    <label for="name">Data Nascimento</label>
+    <input type="text" name="data_nasc" class="form-control" data-mask="00/00/0000" placeholder="XX/XX/XXXXX" value="<%= cliente.data_nasc %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="name">ID (CPF)</label>
+    <input type="text" name="cpf" class="form-control cpf" data-mask="000.000.000-00" placeholder="XXX.XXX.XXX-XX" value="<%=cliente.id %>">
+</div>
+
+<div class="form-group">
+    <label for="name">Celular</label>
+    <input type="tel" name="celular" class="form-control phone_with_ddd" data-mask="(00) 00000-0000" placeholder="(XX) XXXXX-XXXX" value="<%= cliente.celular %>" required="">
+</div>
+
+<div class="row">
+    <hr>
+    <div class="col-xs-12">
+        <h4>..:: Entrega ::..</h4>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="name">CEP</label>
+    <input type="text" name="cep" class="form-control cep" data-mask="00.000-000" placeholder="Digite o numero do cep" value="<%= cliente.endereco.cep %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="name">Logradouro</label>
+    <input type="text" name="logradouro" class="form-control" placeholder="Digite o nome da sua rua" value="<%= cliente.endereco.logradouro %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="name">Bairro</label>
+    <input type="text" name="bairro" class="form-control" placeholder="Entre em seu bairro" value="<%= cliente.endereco.bairro %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="name">Número</label>
+    <input type="number" name="numero_entrega" class="form-control" placeholder="Coloque seu número" value="<%= cliente.endereco.numero %>" required="">
+</div>
+
+<div class="form-group">
+    <label for="name">Cidade</label>
+    <input type="text" name="cidade" class="form-control" placeholder="Digite o nome da sua cidade" value="<%= cliente.endereco.cidade %>" required="">
+</div>
+
+<div class="form-group">
+    <button type="submit" class="btn btn-red-dark-default">Salvar</button>
 </div>

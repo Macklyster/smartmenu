@@ -18,7 +18,7 @@ let upload = multer({
             cb(null, { fieldName: file.fieldname })
         },
         key: (req, file, cb) => {
-            //cb(null, file.originalname)
+            //cb(null, file.originalname) ANTIGO
             cb(null, Date.now().toString() + '-' + file.originalname)
         }
     })

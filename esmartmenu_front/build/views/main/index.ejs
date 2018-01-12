@@ -1,73 +1,73 @@
 <%- contentFor('body') %>
-	<section id="produto">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-md-3 col-lg-3 cat">
-					<h4 class="title upper bold">Categoria</h4>
-					<ul class="list-group">
-						<% for (var i = 0; i < categorias_menu.length; i++) {%>
-							<li class="list-group-item">
-								<a href="/categoria/<%= categorias_menu[i].slug %>">
-									<%= categorias_menu[i].nome %>
-								</a>
-							</li>
-							<% } %>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-md-9 col-lg-9 list_pro">
-					<h4 class="title upper bold">Mais Vendidos</h4>
-					<div class="row">
-						<% for (var i = 0; i < produtos.length; i++) {%>
-							<div class="col-sm-6 col-md-4 product_item">
-								<div class="thumbnail">
-									<div class="preview text-center">
-										<img src="<%= produtos[i].image %>" class="img-responsive" alt="">
-									</div>
-									<div class="caption text-center">
-										<h4>
-											<a href="/produto/<%= produtos[i].slug %>">
-												<%= produtos[i].nome %>
-											</a>
-										</h4>
-										<div class="price">
-											<strong>R$
-												<%= produtos[i].preco_venda %>,00</strong>
-										</div>
-										<p>
-											<a href="/produto/<%= produtos[i].slug %>" class="btn btn-red-default">Mais Detalhes</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<% } %>
-					</div>
-				</div>
-			</div>
-			<hr>
-		</div>
-	</section>
+    <section id="produto">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 cat">
+                    <h4 class="title upper bold">Categoria</h4>
+                    <ul class="list-group">
+                        <% for (var i = 0; i < categorias_menu.length; i++) {%>
+                            <li class="list-group-item">
+                                <a href="/categoria/<%= categorias_menu[i].slug %>">
+                                    <%= categorias_menu[i].nome %>
+                                </a>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-md-9 col-lg-9 list_pro">
+                    <h4 class="title upper bold">Mais Vendidos</h4>
+                    <div class="row">
+                        <% for (var i = 0; i < produtos.length; i++) {%>
+                            <div class="col-sm-6 col-md-4 product_item">
+                                <div class="thumbnail">
+                                    <div class="preview text-center">
+                                        <img src="<%= produtos[i].image %>" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="caption text-center">
+                                        <h4>
+                                            <a href="/produto/<%= produtos[i].slug %>">
+                                                <%= produtos[i].nome %>
+                                            </a>
+                                        </h4>
+                                        <div>
+                                            <strong data-mask="#.###,##">R$
+												<%= produtos[i].preco_venda %></strong>
+                                        </div>
+                                        <p>
+                                            <a href="/produto/<%= produtos[i].slug %>" class="btn btn-red-default">Mais Detalhes</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
 
-	<section id="line"></section>
+    <section id="line"></section>
 
-	<section id="steps">
-		<div class="container">
-			<div class="row">
-				<h4 class="title upper bold">Bares e Restaurantes </h4>
-				<div class="col-xs-12 col-md-4 step">
-					<i class="fa fa-cloud one"></i>
-					<h4 class="upper bold">Delivery Web</h4>
-					<p>Tenha seu próprio sistema delivery sem intermediários.</p>
-				</div>
-				<div class="col-xs-12 col-md-4 step">
-					<i class="fa fa-list two"></i>
-					<h4 class="upper bold">Retaguarda Cloud</h4>
-					<p>Gerencie a operação de seu restaurante a qualquer hora.</p>
-				</div>
-				<div class="col-xs-12 col-md-4 step">
-					<i class="fa fa-pie-chart three"></i>
-					<h4 class="upper bold">Relatórios Web</h4>
-					<p>Acesse todas informações de sua operação, de onde estiver.</p>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section id="steps">
+        <div class="container">
+            <div class="row">
+                <h4 class="title upper bold">Bares e Restaurantes </h4>
+                <div class="col-xs-12 col-md-4 step">
+                    <i class="fa fa-cloud one"></i>
+                    <h4 class="upper bold">Delivery Web</h4>
+                    <p>Tenha seu próprio sistema delivery sem intermediários.</p>
+                </div>
+                <div class="col-xs-12 col-md-4 step">
+                    <i class="fa fa-list two"></i>
+                    <h4 class="upper bold">Retaguarda Cloud</h4>
+                    <p>Gerencie a operação de seu restaurante a qualquer hora.</p>
+                </div>
+                <div class="col-xs-12 col-md-4 step">
+                    <i class="fa fa-pie-chart three"></i>
+                    <h4 class="upper bold">Relatórios Web</h4>
+                    <p>Acesse todas informações de sua operação, de onde estiver.</p>
+                </div>
+            </div>
+        </div>
+    </section>

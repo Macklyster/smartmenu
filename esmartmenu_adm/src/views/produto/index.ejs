@@ -29,6 +29,7 @@
                                 <tr>
                                     <th>Nome</th>
                                     <th>Categoria</th>
+                                    <th>Preço Real</th>
                                     <th>Preço Venda</th>
                                     <th>Habilitar</th>
                                     <th>Ações</th>
@@ -43,7 +44,10 @@
                                         <td>
                                             <%= produtos[i].categoria.nome %>
                                         </td>
-                                        <td>
+                                        <td data-mask="#.###,##" data-mask-reverse="true">
+                                            <%= produtos[i].preco_real %>
+                                        </td>
+                                        <td data-mask="#.###,##" data-mask-reverse="true">
                                             <%= produtos[i].preco_venda %>
                                         </td>
                                         <td>
@@ -58,11 +62,11 @@
                                                 <i class="fa fa-eye"></i>
                                             </a>
 
-                                            <form action="/produto/<%= produtos[i]._id %>?_method=DELETE" method="POST" class="inline">
+                                            <!--form action="/produto/<%= produtos[i]._id %>?_method=DELETE" method="POST" class="inline">
                                                 <button type="submit" class="btn btn-danger btn-small">
 													<i class="fa fa-trash"></i>
 												</button>
-                                            </form>
+                                            </form-->
                                         </td>
                                     </tr>
                                     <% } %>

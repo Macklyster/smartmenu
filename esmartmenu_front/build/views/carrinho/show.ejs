@@ -1,53 +1,61 @@
 <%- contentFor('body') %>
-<section id="products">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-md-12 col-lg-12 list_pro">
-				<h4 class="title upper bold">Produtos</h4>
-				<hr />
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered">
-								<thead>
-									<tr>
-										<th>Produto</th>
-										<th>Valor</th>
-										<th>Quantidade</th>
-										<th>Ações</th>
-									</tr>
-								</thead>
-								<tbody>
-								<% for (var i = 0; i < carrinho.produtos.length; i++) { %>
-									<tr>
-										<td><%= carrinho.produtos[i].produto.nome %></td>
-										<td>R$ <%= carrinho.produtos[i].produto.preco_venda %>,00</td>
-										<td><%= carrinho.produtos[i].quantidade %></td>
-										<td>
-											<form action="/carrinho/<%= carrinho._id %>?produto_id=<%= carrinho.produtos[i]._id %>&_method=DELETE" method="POST" class="inline">
-												<button type="submit" class="btn btn-danger btn-small">
+    <section id="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12 list_pro">
+                    <h4 class="title upper bold">Produtos</h4>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Valor</th>
+                                            <th>Quantidade</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for (var i = 0; i < carrinho.produtos.length; i++) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= carrinho.produtos[i].produto.nome %>
+                                                </td>
+                                                <td data-mask="#0,00">
+                                                    <%= carrinho.produtos[i].produto.preco_venda %>
+                                                </td>
+                                                <td>
+                                                    <%= carrinho.produtos[i].quantidade %>
+                                                </td>
+                                                <td>
+                                                    <form action="/carrinho/<%= carrinho._id %>?produto_id=<%= carrinho.produtos[i]._id %>&_method=DELETE" method="POST" class="inline">
+                                                        <button type="submit" class="btn btn-danger btn-small">
 													<i class="fa fa-trash"></i>
 												</button>
-											</form>
-										</td>
-									</tr>
-								<% } %>
-								</tbody>
-							</table>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<h4>Valor total - R$ <%= carrinho.total %>,00</h4>
-						</div>
-						<div class="col-xs-12 col-sm-6">
-							<form action="/pedido" method="POST" class="inline">
-								<input type="hidden" name="carrinho_id" value="<%= carrinho._id %>">
-								<input type="hidden" name="total" value="<%= carrinho.total %>">
-								<button type="submit" class="btn btn-success upper">Concluir Pedido</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <h4 data-mask="#0,00">Valor total - R$
+                                    <%= carrinho.total %>
+                                </h4>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <form action="/pedido" method="POST" class="inline">
+                                    <input type="hidden" name="carrinho_id" value="<%= carrinho._id %>">
+                                    <input type="hidden" name="total" value="<%= carrinho.total %>">
+                                    <button type="submit" class="btn btn-success upper">Concluir Pedido</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

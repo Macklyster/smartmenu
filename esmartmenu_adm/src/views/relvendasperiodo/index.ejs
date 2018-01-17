@@ -51,7 +51,7 @@
                 </form>
                 <div class="box-body">
                     <div class="table-responsive">
-                        <table id="relprodutosmaisvendidos" class="table table-hover">
+                        <table id="relvendasnoperiodo" cellspacing="0" class="display table table-hover">
                             <thead>
                                 <tr>
                                     <th>Cliente</th>
@@ -62,7 +62,7 @@
                             </thead>
                             <tbody>
                                 <% for (var i = 0; i < carrinhos.length; i++) { %>
-                                    <tr ng-repeat="carrinhos as cards | filter: filtroproduto">
+                                    <tr ng-repeat="carrinhos | filter: filtroproduto">
                                         <td>
                                             <%= carrinhos[i].cliente.nome %>
                                         </td>

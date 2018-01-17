@@ -1,7 +1,7 @@
 const Produto = require('./../../schemas/produto')
-const Banner = require('./../../schemas/banner')
 
 module.exports = (req, res) => {
+
     Produto
         .find({
             enable: true

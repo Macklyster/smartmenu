@@ -29,6 +29,24 @@
 
         <% include ./../partials/main/footer %>
 
+            <!--script src="/jquery/dist/jquery.min.js"></script>
+            <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="/js/theme.js"></script>
+            <script src="/js/app.js"></script>
+            <script src="/js/jspdf.debug.js"></script>
+            <script src="/js/jquery.techbytarun.excelexportjs.min.js"></script>
+            <script src="/js/bootstrap-datepicker.min.js"></script>
+            <script src="/js/Chart.min.js"></script>
+            <script src="/js/jquery.dataTables.min.js"></script>
+            <script src="/js/dataTables.buttons.min.js"></script>
+            <script src="/js/jszip.min.js"></script>
+            <script src="/js/pdfmake.min.js"></script>
+            <script src="/js/vfs_fonts.js"></script>
+            <script src="/js/buttons.html5.min.js"></script>
+            <script src="/js/jquery-ui.js"></script>
+            <script src="/js/moment.js"></script>
+            <script-- src="/js/parsley.js"></script-->
+
             <script src="/jquery/dist/jquery.min.js"></script>
             <script src="/js/jquery-3.2.1.min.js"></script>
             <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -50,20 +68,10 @@
             <script src="/js/jquery.mask.js"></script>
 </body>
 
+</body>
+
 </html>
 <script>
-    $(".dinheiro").inputmask('currency', {
-        "autoUnmask": true,
-        radixPoint: ",",
-        groupSeparator: ".",
-        allowMinus: false,
-        prefix: 'R$ ',
-        digits: 2,
-        digitsOptional: false,
-        rightAlign: true,
-        unmaskAsNumber: true
-    });
-
     $('#relcliente').DataTable({
         dom: 'Bfrtip',
         language: {
@@ -194,7 +202,8 @@
     });
 
 
-    var dashvendasperiodocont = document.getElementById('dashvendasperiodo').getContext('2d')
+    var dashvendasperiodocont = document.getElementById('dashvendasperiodo')
+    dashvendasperiodocont = dashvendasperiodocont ? dashvendasperiodocont.getContext('2d') : null;
 
     $.get('http://localhost:9001/dashvendasperiodo').done(function(result) {
         var chart = new Chart(dashvendasperiodocont, {
@@ -230,7 +239,8 @@
         })
     })
 
-    var relclientescont = document.getElementById('jsonrelcliente').getContext('2d')
+    var relclientescont = document.getElementById('jsonrelcliente')
+    relclientescont = relclientescont ? relclientescont.getContext('2d') : null;
 
     $.get('http://localhost:9001/relcliente').done(function(result) {
         var chart = new Chart(relclientescont, {
@@ -332,9 +342,9 @@
         });
 
         Parsley.on('form:submit', function() {
-            alert("O formulário seria enviado neste momento. " +
-                "Para esta demo, interrompemos o processamento.");
-            return false; // Don't submit for this demo
+            /*alert("O formulário seria enviado neste momento. " +
+                "Para esta demo, interrompemos o processamento.");*/
+            return true; // Don't submit for this demo
         });
 
         $('.demo-form').parsley({
@@ -343,37 +353,53 @@
     });
 
     $('.date').mask('00/00/0000');
-  $('.time').mask('00:00:00');
-  $('.date_time').mask('00/00/0000 00:00:00');
-  $('.cep').mask('00000-000');
-  $('.phone').mask('0000-0000');
-  $('.phone_with_ddd').mask('(00) 0000-0000');
-  $('.phone_us').mask('(000) 000-0000');
-  $('.mixed').mask('AAA 000-S0S');
-  $('.cpf').mask('000.000.000-00', {reverse: true});
-  $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
-  $('.money').mask('000.000.000.000.000,00', {reverse: true});
-  $('.money2').mask("#.##0,00", {reverse: true});
-  $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
-    translation: {
-      'Z': {
-        pattern: /[0-9]/, optional: true
-      }
-    }
-  });
-  $('.ip_address').mask('099.099.099.099');
-  $('.percent').mask('##0,00%', {reverse: true});
-  $('.clear-if-not-match').mask("00/00/0000", {clearIfNotMatch: true});
-  $('.placeholder').mask("00/00/0000", {placeholder: "__/__/____"});
-  $('.fallback').mask("00r00r0000", {
-      translation: {
-        'r': {
-          pattern: /[\/]/,
-          fallback: '/'
-        },
-        placeholder: "__/__/____"
-      }
+    $('.time').mask('00:00:00');
+    $('.date_time').mask('00/00/0000 00:00:00');
+    $('.cep').mask('00000-000');
+    $('.phone').mask('0000-0000');
+    $('.phone_with_ddd').mask('(00) 0000-0000');
+    $('.phone_us').mask('(000) 000-0000');
+    $('.mixed').mask('AAA 000-S0S');
+    $('.cpf').mask('000.000.000-00', {
+        reverse: true
     });
-  $('.selectonfocus').mask("00/00/0000", {selectOnFocus: true});
-
+    $('.cnpj').mask('00.000.000/0000-00', {
+        reverse: true
+    });
+    $('.money').mask('000.000.000.000.000,00', {
+        reverse: true
+    });
+    $('.money2').mask("#.##0,00", {
+        reverse: true
+    });
+    $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+        translation: {
+            'Z': {
+                pattern: /[0-9]/,
+                optional: true
+            }
+        }
+    });
+    $('.ip_address').mask('099.099.099.099');
+    $('.percent').mask('##0,00%', {
+        reverse: true
+    });
+    $('.clear-if-not-match').mask("00/00/0000", {
+        clearIfNotMatch: true
+    });
+    $('.placeholder').mask("00/00/0000", {
+        placeholder: "__/__/____"
+    });
+    $('.fallback').mask("00r00r0000", {
+        translation: {
+            'r': {
+                pattern: /[\/]/,
+                fallback: '/'
+            },
+            placeholder: "__/__/____"
+        }
+    });
+    $('.selectonfocus').mask("00/00/0000", {
+        selectOnFocus: true
+    });
 </script>
